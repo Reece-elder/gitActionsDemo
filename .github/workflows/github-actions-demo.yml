@@ -11,9 +11,13 @@ jobs:
     - run: ls 
     - run: echo 'Job status is ${{job.status}}'
   second-job: 
+    # needs waits for the specified job to complete
+    needs: Actions_Demo
     runs-on: ubuntu-latest
     steps:
     - run: echo '2nd job'
     - run: pwd
+    - run: ls
+    # Needed to add executable access
     - run: chmod +x buildScript.sh 
     - run: ./buildScript.sh
