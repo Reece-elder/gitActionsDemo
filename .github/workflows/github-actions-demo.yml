@@ -9,7 +9,7 @@ jobs:
     - name: Check out repo
       uses: actions/checkout@v3
     - run: ls ${{github.workspace}}
-    - run: echo 'Job status is ${{job.status}}
+    - run: echo 'Job status is ${{job.status}}'
   second-job: 
     runs-on: ubuntu-latest
     steps:
