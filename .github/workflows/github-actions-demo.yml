@@ -15,5 +15,5 @@ jobs:
     steps:
     - run: echo '2nd job'
     - run: pwd
-    - run: chmod +x buildscript.sh 
+    - run: chmod +x buildScript.sh 
     - run: ./buildScript.sh
