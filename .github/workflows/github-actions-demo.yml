@@ -1,9 +1,17 @@
-name: GitHub Actions Demo
+name: GitHub Demo
 on: [push]
-jobs: 
-  Explore-GitHub-Actions:
+jobs:
+  Actions_Demo: 
     runs-on: ubuntu-latest
     steps:
-    - run: echo "is this working?"
+    - run: echo 'Job triggered by ${{github.event_name}}'
+    - run: echo 'Running on ${{runner.os}}'
+    - name: Check out repo
+      uses: actions/checkout@v3
     - run: ls ${{github.workspace}}
-    - run: echo Job status - ${{job.status}}
+    - run: echo 'Job status is ${{job.status}}
+  second-job: 
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo '2nd job'
+    - run: pwd
